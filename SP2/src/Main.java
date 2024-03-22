@@ -7,7 +7,9 @@ public class Main {
         f1.addCar(gas1);
         f1.addCar(die1);
         f1.addCar(ele1);
-        System.out.println(f1);
-        System.out.println("Total registration fee for fleet of cars is: "+f1.getTotalRegistrationFeeForFleet()+" dkk");
+        System.out.println(gas1);
+        System.out.println(die1);
+//        System.out.println(f1);
+//        System.out.println("Total registration fee for fleet of cars is: "+f1.getTotalRegistrationFeeForFleet()+" dkk");
     }
 }

@@ -19,7 +19,7 @@ class ElectricCar extends ACar{
     }
     @Override
     public int getRegistrationFee() {
-        double electricFee = 100/(getWhPrKm()/91.25);
+        double electricFee = 100/(this.getWhPrKm()/91.25);  // same as 9125/this.getWhPrKm()
         int registrationFee = 10470;
         if (electricFee > 20) {
             registrationFee = 330;

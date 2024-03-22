@@ -3,7 +3,10 @@ class GasolinCar extends AFuelCar{
     public GasolinCar(String registrationNumber, String make, String model, int numberOfDoors, int kmPrLitre) {
         super(registrationNumber, make, model, numberOfDoors, kmPrLitre);
     }
-
+    @Override
+    public String getFuelType() {
+        return "Gasolin";
+    }
     @Override
     public int getRegistrationFee() {
         int kmPrLitre = getKmPrLitre();
@@ -19,5 +22,10 @@ class GasolinCar extends AFuelCar{
         }
         return registrationFee;
     }
-
+    @Override
+    public String toString(){
+        String result = super.toString()+"Registration fee:\t\t\t "+getRegistrationFee()+" dkk"+"\n";
+        result += "Fuel type:\t\t\t\t\t "+getFuelType()+"\n";
+        return result;
+    }
 }

@@ -26,18 +26,21 @@ class DieselCar extends AFuelCar{
                 registrationFee = 5500;
                 equalizationTax = 2770;
             }
-
         int sum = equalizationTax + registrationFee;
-
         if(!hasParticleFilter()){
             sum += 1000;
         }
         return sum;
     }
     @Override
+    public String getFuelType() {
+        return "Diesel";
+    }
+    @Override
     public String toString(){
         String result = super.toString()+"Particle filter:\t\t\t "+hasParticleFilter()+"\n";
-        result += "Registration fee:\t\t\t "+getRegistrationFee()+" dkk"+"\n\n";
+        result += "Registration fee:\t\t\t "+getRegistrationFee()+" dkk"+"\n";
+        result += "Fuel type:\t\t\t\t\t "+getFuelType()+"\n";
         return result;
     }
 }
