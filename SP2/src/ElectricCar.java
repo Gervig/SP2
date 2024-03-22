@@ -15,19 +15,22 @@ class ElectricCar extends ACar{
         return this.maxRange;
     }
     public int getWhPrKm(){
-        return (this.batteryCapacity*1000) / this.maxRange;
+        return (this.batteryCapacity * 1000) / this.maxRange;
     }
     @Override
     public int getRegistrationFee() {
-        int WhPrKm = getWhPrKm();
+        double electricFee = 100/(getWhPrKm()/91.25);
+        System.out.println(electricFee);
         int registrationFee = 10470;
-        if (WhPrKm > 20) {
+        if (electricFee > 50){
+            registrationFee = 130;
+        } else if (electricFee > 20) {
             registrationFee = 330;
-        } else if (WhPrKm > 15) {
+        } else if (electricFee > 15) {
             registrationFee = 1050;
-        } else if (WhPrKm > 10) {
+        } else if (electricFee > 10) {
             registrationFee = 2340;
-        } else if (WhPrKm > 5) {
+        } else if (electricFee > 5) {
             registrationFee = 5500;
         }
         return registrationFee;
